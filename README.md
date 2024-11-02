@@ -226,7 +226,7 @@ Delete and return the comment for the current position, if it exists.
 ```ts
 const chess = new Chess()
 
-chess.loadPgn('1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 {giuoco piano} *')
+chess.load_pgn('1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 {giuoco piano} *')
 
 chess.getComment()
 // -> "giuoco piano"
@@ -245,7 +245,7 @@ Delete and return comments for all positions.
 ```ts
 const chess = new Chess()
 
-chess.loadPgn(
+chess.load_pgn(
   "1. e4 e5 {king's pawn opening} 2. Nf3 Nc6 3. Bc4 Bc5 {giuoco piano} *",
 )
 
@@ -316,7 +316,7 @@ Retrieve the comment for the current position, if it exists.
 ```ts
 const chess = new Chess()
 
-chess.loadPgn('1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 {giuoco piano} *')
+chess.load_pgn('1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 {giuoco piano} *')
 
 chess.getComment()
 // -> "giuoco piano"
@@ -329,7 +329,7 @@ Retrieve comments for all positions.
 ```ts
 const chess = new Chess()
 
-chess.loadPgn(
+chess.load_pgn(
   "1. e4 e5 {king's pawn opening} 2. Nf3 Nc6 3. Bc4 Bc5 {giuoco piano} *",
 )
 
@@ -578,7 +578,7 @@ chess.load('8/4p3/8/8/8/8/4P3/6K1 w - - 1 45', { skipValidation: true })
 // -> Works!
 ```
 
-### .loadPgn(pgn, [ options ])
+### .load_pgn(pgn, [ options ])
 
 Load the moves of a game stored in
 [Portable Game Notation](http://en.wikipedia.org/wiki/Portable_Game_Notation).
@@ -622,7 +622,7 @@ const pgn = [
   '23.Bd7+ Kf8 24.Bxe7# 1-0',
 ]
 
-chess.loadPgn(pgn.join('\n'))
+chess.load_pgn(pgn.join('\n'))
 
 chess.ascii()
 // -> '  +------------------------+
@@ -656,10 +656,10 @@ const sloppyPgn = [
   '8. Qb3 1-0',
 ].join(':')
 
-chess.loadPgn(sloppyPgn, { newlineChar: ':' })
+chess.load_pgn(sloppyPgn, { newlineChar: ':' })
 // works by default
 
-chess.loadPgn(sloppyPgn, { newlineChar: ':', strict: true })
+chess.load_pgn(sloppyPgn, { newlineChar: ':', strict: true })
 // Error: Invalid move in PGN: Pc2c4
 ```
 
